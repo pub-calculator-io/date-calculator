@@ -4,22 +4,25 @@ function calculate() {
 	const countHolidays = _('count_holidays').checked;
 	if(!input.valid()) return;
 	let holidays = [];
-	for(let i = 0; i < LETTERS.length; i++) {
-		const letter = LETTERS[i];
-		if(_(`count_month_${letter}`) || _(`count_day_${letter}`)) {
-			let holiday = input.get(`count_holiday_${letter}`).raw()
-			let month = input.get(`count_month_${letter}`).lte(12).val();
-			let day = input.get(`count_day_${letter}`).lte(31).val();
-			if(!input.valid()) return;
-			if(month && day) {
-				holidays.push({
-					holiday,
-					month,
-					day
-				});
+	if(countHolidays) {
+		for(let i = 0; i < LETTERS.length; i++) {
+			const letter = LETTERS[i];
+			if(_(`count_month_${letter}`) || _(`count_day_${letter}`)) {
+				let holiday = input.get(`count_holiday_${letter}`).optional().raw()
+				let month = input.get(`count_month_${letter}`).optional().lte(12).val();
+				let day = input.get(`count_day_${letter}`).optional().lte(31).val();
+				if(!input.valid()) return;
+				if(month && day) {
+					holidays.push({
+						holiday,
+						month,
+						day
+					});
+				}
 			}
 		}
 	}
+
 	let seconds = (endDate.getTime() - startDate.getTime()) / 1000;
 	const endCalendarDate = new Date(endDate);
 	seconds = Math.abs(seconds);
@@ -220,7 +223,7 @@ function convertDateToDMY(date) {
 }
 
 
-function convert() {
+function convert(){
 	let startDate = input.get('start_date_two').date().raw();
 	// let endDate = input.get('end_date').date().raw();
 	const years = input.get('years').val();
@@ -231,19 +234,21 @@ function convert() {
 	const excludeHolidays = _('exclude_holidays').checked;
 	if(!input.valid()) return;
 	let holidays = [];
-	for(let i = 0; i < LETTERS.length; i++) {
-		const letter = LETTERS[i];
-		if(_(`exclude_month_${letter}`) || _(`exclude_day_${letter}`)) {
-			let holiday = input.get(`exclude_holiday_${letter}`).raw()
-			let month = input.get(`exclude_month_${letter}`).lte(12).val();
-			let day = input.get(`exclude_day_${letter}`).lte(31).val();
-			if(!input.valid()) return;
-			if(month && day) {
-				holidays.push({
-					holiday,
-					month,
-					day
-				});
+	if(excludeHolidays) {
+		for(let i = 0; i < LETTERS.length; i++){
+			const letter = LETTERS[i];
+			if(_(`exclude_month_${letter}`) || _(`exclude_day_${letter}`)){
+				let holiday = input.get(`exclude_holiday_${letter}`).optional().raw()
+				let month = input.get(`exclude_month_${letter}`).optional().lte(12).val();
+				let day = input.get(`exclude_day_${letter}`).optional().lte(31).val();
+				if(!input.valid()) return;
+				if(month && day){
+					holidays.push({
+						holiday,
+						month,
+						day
+					});
+				}
 			}
 		}
 	}
