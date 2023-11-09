@@ -13,6 +13,8 @@ Free calculator to effortlessly evaluate the difference between dates. Easily ad
 
 Free calculator to effortlessly evaluate the difference between dates. Easily add or subtract days from any date, with or without holidays and weekends.
 
+[Date Calculator Homepage](https://www.calculator.io/date-calculator/ "Date Calculator Homepage")
+
 __Shortcode__
 
 Use the Date Calculator shortcode:
