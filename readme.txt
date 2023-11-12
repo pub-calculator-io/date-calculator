@@ -13,34 +13,35 @@ Free calculator to effortlessly evaluate the difference between dates. Easily ad
 
 Free calculator to effortlessly evaluate the difference between dates. Easily add or subtract days from any date, with or without holidays and weekends.
 
-[Date Calculator Homepage](https://www.calculator.io/date-calculator/ "Date Calculator Homepage")
+[https://www.calculator.io/date-calculator/](https://www.calculator.io/date-calculator/)
 
-__Shortcode__
-
-Use the Date Calculator shortcode:
+__Date Calculator Shortcode__
 
 `[ci_date_calculator]`
-
-Libraries in use:
-1. https://mathjs.org/
-2. https://katex.org/
-3. https://github.com/aFarkas/lazysizes
-4. https://github.com/RobinHerbots/Inputmask
-5. https://air-datepicker.com/
-6. https://www.chartjs.org/
 
 == Installation ==
 
 1. Upload the /ci_date_calculator/ folder to the /wp-content/plugins/ directory.
 2. Activate the [Date Calculator](https://www.calculator.io/date-calculator/ "Date Calculator Homepage") plugin through the "Plugins" menu in WordPress.
 
-== Usage ==
+== Date Calculator Usage ==
+
 * Add the shortcode `[ci_date_calculator]` to your page, post or sidebar.
 * Add the following code: `<?php display_ci_date_calculator(); ?>` to your template where you would like the Date Calculator to appear.
 
 == Screenshots ==
+
 1. The Date Calculator Input Form.
 2. The Date Calculator Calculation Results.
+
+== Libraries used in Date Calculator ==
+
+1. https://mathjs.org/
+2. https://katex.org/
+3. https://github.com/aFarkas/lazysizes
+4. https://github.com/RobinHerbots/Inputmask
+5. https://air-datepicker.com/
+6. https://www.chartjs.org/
 
 == Changelog ==
 
