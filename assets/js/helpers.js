@@ -36,12 +36,12 @@ function addNewCountField(key) {
 			</label>
 			<label class="input col">
 				<div class="input-field row">
-					<input type="number" class="input-field__input" placeholder="0" id="count_month_${letter}" value="">
+					<input type="number" class="input-field__input" id="count_month_${letter}" value="">
 				</div>
 			</label>
 			<label class="input col">
 				<div class="input-field row">
-					<input type="number" class="input-field__input" placeholder="0" id="count_day_${letter}" value="">
+					<input type="number" class="input-field__input" id="count_day_${letter}" value="">
 				</div>
 			</label>
 			<label class="input col">
@@ -120,12 +120,12 @@ function addNewExcludeField(key) {
 			</label>
 			<label class="input col">
 				<div class="input-field row">
-					<input type="number" class="input-field__input" placeholder="0" id="exclude_month_${letter}" value="">
+					<input type="number" class="input-field__input" id="exclude_month_${letter}" value="">
 				</div>
 			</label>
 			<label class="input col">
 				<div class="input-field row">
-					<input type="number" class="input-field__input" placeholder="0" id="exclude_day_${letter}" value="">
+					<input type="number" class="input-field__input" id="exclude_day_${letter}" value="">
 				</div>
 			</label>
 			<label class="input col">
