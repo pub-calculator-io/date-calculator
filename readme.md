@@ -1,4 +1,4 @@
-# Date Calculator WordPress Widget by [Calculator.iO](https://www.calculator.io/ "Calculator.iO Homepage")
+# Date Calculator Widget for WordPress
 
 Free calculator to effortlessly evaluate the difference between dates. Easily add or subtract days from any date, with or without holidays and weekends.
 
