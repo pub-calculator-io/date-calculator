@@ -1,4 +1,4 @@
-=== Date Calculator by Calculator.iO ===
+=== Date Calculator ===
 Contributors: calculatorio
 Tags: date duration calculator, calculate days between dates, date difference calculator, find weeks between dates, add days to date calculator, subtract dates calculator, date countdown calculator, calculate time span, date to date calculator, working days calculator
 Requires at least: 5.0
