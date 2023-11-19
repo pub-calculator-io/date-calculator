@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Date Calculator by www.calculator.io
+Plugin Name: CI Date calculator
 Plugin URI: https://www.calculator.io/date-calculator/
 Description: Free calculator to effortlessly evaluate the difference between dates. Easily add or subtract days from any date, with or without holidays and weekends.
 Version: 1.0.0
