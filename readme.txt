@@ -24,7 +24,6 @@ Add the following code to your template where you would like the Date Calculator
 == Screenshots ==
 
 1. The Date Calculator Input Form.
-2. The Date Calculator Calculation Results.
 
 == Installation ==
 

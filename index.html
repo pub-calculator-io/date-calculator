@@ -65,6 +65,12 @@
                 		
                 		</label>
                 	</div>
+                	<div class="input-wrapper row">
+                		<label class="checkbox">
+                			<input type="checkbox" class="checkbox__input" id="include_end_date"  onchange="relatedToggle(event, 'include_end_date')" />
+                			<span class="checkbox__box"></span>
+                				<span class="checkbox__title">Include End Day (+1 day)</span>
+                		</label>	</div>
                 </div>
                 <div class="calculator-content col tab" data-tab="1">
                 	<div class="input-wrapper row">
@@ -106,28 +112,28 @@
                 		</label>
                 	</div>
                 	<div class="input-wrapper row">
-                		<label class="input col   ">
+                		<label class="input col age-calculator,time-calculator,time-duration-calculator,days-calculator  ">
                 			<p class="input__title">Years</p>
                 			<div class="input-field row">
                 				<input type="text" class="input-field__input" placeholder=""  id="years" value="36"  />
                 			</div>
                 		
                 		
-                		</label>		<label class="input col   ">
+                		</label>		<label class="input col age-calculator,time-calculator,time-duration-calculator,days-calculator  ">
                 			<p class="input__title">Months</p>
                 			<div class="input-field row">
                 				<input type="text" class="input-field__input" placeholder=""  id="months" value=""  />
                 			</div>
                 		
                 		
-                		</label>		<label class="input col   ">
+                		</label>		<label class="input col age-calculator,time-calculator,time-duration-calculator,days-calculator  ">
                 			<p class="input__title">Weeks</p>
                 			<div class="input-field row">
                 				<input type="text" class="input-field__input" placeholder=""  id="weeks" value=""  />
                 			</div>
                 		
                 		
-                		</label>		<label class="input col   ">
+                		</label>		<label class="input col age-calculator,time-calculator,time-duration-calculator,days-calculator  ">
                 			<p class="input__title">Days</p>
                 			<div class="input-field row">
                 				<input type="text" class="input-field__input" placeholder=""  id="days" value=""  />
@@ -228,7 +234,7 @@
                 <div class="calculator-content calculator-content--gray calculator-content--footer calculator-content--small row tab tab--active" data-tab="0">
                 
                 
-                		<button class="system-switcher system-switcher--format" onclick="toggleSystem(this)">
+                		<button class="system-switcher system-switcher--format" onclick="toggleSystem(this)" aria-label="Switch System">
                 			<div class="system-switcher__circle"></div>
                 			<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 	<path d="M7.84254 5.61418C7.84254 4.72269 8.56524 4 9.45673 4C10.7869 4 11.5462 5.51856 10.7481 6.58269L7.84254 10.4567H11.4745M3 5.29135L4.08967 4.41961C4.30105 4.2505 4.61418 4.401 4.61418 4.6717V10.4567" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -249,19 +255,21 @@
                 		</script>
                 
                 
-                	<button class="button button--primary ml-auto" onclick="calculate(this)">Calculate</button>
+                	<button class="button button--primary ml-auto" onclick="calculate(this); animateElements();" data-action="calculate" id="action-button">Calculate</button>
                 </div>
                 
                 
                 
-                	<link rel="stylesheet" href="./assets/css/air-datepicker.css" />
-                	<script type="text/javascript" src="./assets/js/lib/air-datepicker.js" id="datepicker_script"></script>
                 
-                	<script type="text/javascript" src="./assets/js/calculator.js"></script>
+                
+                	<link rel="stylesheet" href="./assets/css/air-datepicker.min.css" defer />
+                	<script type="text/javascript" src="./assets/js/lib/air-datepicker.js" id="datepicker_script" defer></script>
+                
+                	<script type="text/javascript" src="./assets/js/calculator.js" defer></script>
                 <div class="calculator-content calculator-content--gray calculator-content--footer calculator-content--small row tab " data-tab="1">
                 
                 
-                		<button class="system-switcher system-switcher--format" onclick="toggleSystem(this)">
+                		<button class="system-switcher system-switcher--format" onclick="toggleSystem(this)" aria-label="Switch System">
                 			<div class="system-switcher__circle"></div>
                 			<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 	<path d="M7.84254 5.61418C7.84254 4.72269 8.56524 4 9.45673 4C10.7869 4 11.5462 5.51856 10.7481 6.58269L7.84254 10.4567H11.4745M3 5.29135L4.08967 4.41961C4.30105 4.2505 4.61418 4.401 4.61418 4.6717V10.4567" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -282,13 +290,15 @@
                 		</script>
                 
                 
-                	<button class="button button--primary ml-auto" onclick="convert(this)">Calculate</button>
+                	<button class="button button--primary ml-auto" onclick="convert(this); animateElements();" data-action="convert" id="action-button">Calculate</button>
                 </div>
                 
                 
                 
-                	<link rel="stylesheet" href="./assets/css/air-datepicker.css" />
-                	<script type="text/javascript" src="./assets/js/lib/air-datepicker.js" id="datepicker_script"></script>
+                
+                
+                	<link rel="stylesheet" href="./assets/css/air-datepicker.min.css" defer />
+                	<script type="text/javascript" src="./assets/js/lib/air-datepicker.js" id="datepicker_script" defer></script>
                 
                 
                 <script src="./assets/js/helpers.js"></script>
@@ -306,8 +316,7 @@
         </svg>
         		<p class="calculator-error__title">There was an error with your calculation.</p>
         	</div>
-        	<div class="col" id="error-list">
-        	</div>
+        	<div class="col" id="error-list"></div>
         </div>        <span id="calculator_result"><style>
     .result-age--range .holiday {
 		position: relative;
@@ -336,8 +345,8 @@
 <div class="calculator-result col tab tab--active" data-tab="0">
 	<p class="table-cell table-cell--dark table-cell--only-title">Result</p>
 	<div class="table-cell table-cell--age table-cell--only row">
-		<div class="col result-age__text">
-			<p class="result-text">36 years</p>
+		<div class="col result-age__text animate">
+			<p class="result-text">36 years 0 months 0 weeks 0 days</p>
 			<p class="result-text">or 864 months</p>
 			<p class="result-text">or 1,878 weeks 3 days</p>
 			<p class="result-text">or 13,149 days</p>
@@ -347,7 +356,7 @@
 		</div>
 		<div class="row table-cell--date-count table-cell--date-left">
 			<div class="col result-age result-age--small result-age--range result-start-date">
-				<p class="date-title">From <span class="date-title date-title--date">15 Oct 1986<span></span></span></p>
+				<p class="date-title">From <span class="date-title date-title--date animate">15 Oct 1986<span></span></span></p>
 				<div>
 					<p>M</p>
 					<p>T</p>
@@ -357,7 +366,7 @@
 					<p>S</p>
 					<p>S</p>
 				</div>
-				<div class="result-age--days">
+				<div class="result-age--days animate">
 					<p>29</p>
 					<p>30</p>
 					<p class="active">1</p>
@@ -403,7 +412,7 @@
 				</div>
 			</div>
 			<div class="col result-age result-age--small result-age--range result-end-date">
-				<p class="date-title">To <span class="date-title date-title--date">15 Oct 2022</span></p>
+				<p class="date-title">To <span class="date-title date-title--date animate">15 Oct 2022</span></p>
 				<div>
 					<p>M</p>
 					<p>T</p>
@@ -413,7 +422,7 @@
 					<p>S</p>
 					<p>S</p>
 				</div>
-				<div class="result-age--days">
+				<div class="result-age--days animate">
 					<p class="current-between">26</p>
 					<p class="current-between">27</p>
 					<p class="current-between">28</p>
@@ -467,7 +476,7 @@
 	<div id="el"></div>
 	<div class="table-cell table-cell--age table-cell--date table-cell--only row">
 		<div class="col result-age result-age--small result-age--range result-start-date-2">
-			<p class="date-title">From <span class="date-title date-title--date">15 Oct 1986<span></span></span></p>
+			<p class="date-title">From <span class="date-title date-title--date animate">15 Oct 1986<span></span></span></p>
 			<div>
 				<p>M</p>
 				<p>T</p>
@@ -477,7 +486,7 @@
 				<p>S</p>
 				<p>S</p>
 			</div>
-			<div class="result-age--days">
+			<div class="result-age--days animate">
 				<p>29</p>
 				<p>30</p>
 				<p class="active">1</p>
@@ -523,7 +532,7 @@
 			</div>
 		</div>
 		<div class="col result-age result-age--small result-age--range result-end-date-2">
-			<p class="date-title">To <span class="date-title date-title--date">15 Oct 2022</span></p>
+			<p class="date-title">To <span class="date-title date-title--date animate">15 Oct 2022</span></p>
 			<div>
 				<p>M</p>
 				<p>T</p>
@@ -533,7 +542,7 @@
 				<p>S</p>
 				<p>S</p>
 			</div>
-			<div class="result-age--days">
+			<div class="result-age--days animate">
 				<p class="current-between">26</p>
 				<p class="current-between">27</p>
 				<p class="current-between">28</p>

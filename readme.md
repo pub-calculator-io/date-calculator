@@ -3,7 +3,6 @@
 Free calculator to effortlessly evaluate the difference between dates. Easily add or subtract days from any date, with or without holidays and weekends.
 
 ![Date Calculator Input Form](/assets/images/screenshot-1.png "Date Calculator Input Form")
-![Date Calculator Calculation Results](/assets/images/screenshot-2.png "Date Calculator Calculation Results")
 
 ## Installation
 
